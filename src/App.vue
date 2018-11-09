@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <MenuSection></MenuSection>
-    <Overall></Overall>
-    <Timeline></Timeline>
+      <MenuSection></MenuSection>
+      <Overall></Overall>
+      <Timeline></Timeline>
   </div>
 </template>
 
@@ -45,6 +45,84 @@ export default {
       overflow:hidden;
     }
   }
+  
+  .graphic {
+    .card {        
+      border:0px solid transparent;
+      }
+    .card-header {
+        border:0px solid transparent;
+        background:$dark;
+        position:relative;
+        z-index:2;
+        
+         &:after {
+         display:none;
+        }
+        .nav-pills {
+          display:flex;
+          justify-content: space-between;
+          position:relative;
+          z-index:20;
+         
+        }
+        .nav-item:nth-child(1) {
+          border: 1px solid #e6ff00;
+          position:relative;
+          a {
+            color:#fff;
+            padding:3px 10px;
+            background:$dark;
+            font-size:0.624em;
+            &:hover {
+             color:$dark;
+             background: #e6ff00;
+             }
+          }
+        .active  {
+          color:$dark;
+          background: #e6ff00;
+        }
+      }
+      .nav-item:nth-child(3) {
+          border: 1px solid #ffa32b;
+          position:relative;
+          a {
+            color:#ffa32b;
+            padding:3px 10px;
+            background:$dark;
+            font-size:0.624em;
+            &:hover {
+             color:$dark;
+             background: #ffa32b;
+             }
+          }
+        .active  {
+          color:$dark;
+          background: #ffa32b;
+        }
+      }
+      .nav-item:nth-child(2) {
+          border: 1px solid #61e3e8;
+          position:relative;
+          a {
+            color:#61e3e8;
+            padding:3px 10px;
+            background:$dark;
+            font-size:0.624em;
+            &:hover {
+             color:$dark;
+             background: #61e3e8;
+             }
+          }
+        .active  {
+          color:$dark;
+          background: #61e3e8;
+        }
+      }
+    }
+  }
+
   .timeline {
     .card {        
       border:0px solid transparent;
@@ -84,15 +162,11 @@ export default {
                  background: #e6ff00;
               }
             }
-            .active  {
-              color:$dark;
-                               background: #e6ff00;
-
-              
+          .active  {
+            color:$dark;
+            background: #e6ff00;
             }
-           
           }
-          
        }
   }
   @import "~bootstrap/scss/bootstrap"; 

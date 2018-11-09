@@ -1,27 +1,28 @@
 <template>
   <div class="overall">
-      
-    <h1>{{ msg }}</h1>
-     
-    <div class="row">
-        <div class="section1 col-md-4">
-            <h2 class="text-center"><countTo :startVal='startVal' :endVal='endVal1' :duration='3000'></countTo><sup>%</sup></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-        <div class="section2 col-md-4">
-            <h2 class="text-center"><countTo :startVal='startVal' :endVal='endVal2' :duration='3000'></countTo><sup>%</sup></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-        <div class="section3 col-md-4">
-            <h2 class="text-center"><countTo :startVal='startVal' :endVal='endVal3' :duration='3000'></countTo><sup>%</sup></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-     </div>
-     <div class="row">
+    <div class="container">
+  
+      <h1>{{ msg }}</h1>
        
-    <button class="btn btn-primary mx-auto">Discover performance</button>
-    
-    
+      <div class="row">
+          <div class="section1 col-md-4">
+              <h2 class="text-center"><countTo :startVal='startVal' :endVal='endVal1' :duration='3000'></countTo><sup>%</sup></h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="section2 col-md-4">
+              <h2 class="text-center"><countTo :startVal='startVal' :endVal='endVal2' :duration='3000'></countTo><sup>%</sup></h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="section3 col-md-4">
+              <h2 class="text-center"><countTo :startVal='startVal' :endVal='endVal3' :duration='3000'></countTo><sup>%</sup></h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+       </div>
+       <div class="row">
+         
+      <button class="btn btn-primary mx-auto">Discover performance</button>
+      
+        </div>
     </div>
   </div>
 </template>

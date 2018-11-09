@@ -2,23 +2,38 @@
   <div class="graphic">
 
 
+       
+      
 <b-card no-body>
   <b-tabs pills card>
     <b-tab title="Lorem" active>
-        <GChart   type="ColumnChart"
-                  :data="chartData1"
-                  :options="chartOptions"/>   
+        <GChart
+          :settings="{packages: ['bar']}"    
+          :data="chartData"
+          :options="chartOptions"
+          :createChart="(el, google) => new google.charts.Bar(el)"
+          @ready="onChartReady"
+        />
+  
     </b-tab>
     <b-tab title="Ipsum">
-      <GChart   type="ColumnChart"
-                  :data="chartData2"
-                  :options="chartOptions"/>   
+       <GChart
+        :settings="{packages: ['bar']}"    
+        :data="chartData2"
+        :options="chartOptions"
+        :createChart="(el, google) => new google.charts.Bar(el)"
+        @ready="onChartReady"
+      /> 
     </b-tab>
     
     <b-tab title="Test 3">
-      <GChart   type="ColumnChart"
-                  :data="chartData3"
-                  :options="chartOptions"/>   
+      <GChart
+        :settings="{packages: ['bar']}"    
+        :data="chartData3"
+        :options="chartOptions"
+        :createChart="(el, google) => new google.charts.Bar(el)"
+        @ready="onChartReady"
+      />  
     </b-tab>
     
   </b-tabs>
@@ -31,49 +46,91 @@
 </template>
 
 <script>
-
 import { GChart } from 'vue-google-charts'
-
 export default {
-  name: 'GraphicCharts',
- 
+  name: 'App',
   components: {
     GChart
   },
-  
   data () {
     return {
-   
-      chartData1: [
-        ['Year', 'Sales', 'Expenses', 'Profit'],
-        ['2014', 1000, 400, 200],
-        ['2015', 1170, 460, 250],
-        ['2016', 660, 112, 300],
-        ['2017', 1030, 540, 350]
+      chartsLib: null, 
+      // Array will be automatically processed with visualization.arrayToDataTable function
+      
+      
+      chartData: [
+        ['Year', 'Sales'],
+        ['2013', 1000],
+        ['2014', 1000],
+        ['2015', 1170],
+        ['2016', 660],
+        ['2017', 1030],
+        ['2018', 1030]
       ],
-      chartData2: [
-        ['Year', 'Sales', 'Expenses', 'Profit'],
-        ['2014', 100, 100, 200],
-        ['2015', 170, 160, 250],
-        ['2016', 460, 110, 300],
-        ['2017', 930, 40, 350]
+       chartData2: [
+        ['Year', 'Sales'],
+        ['2013', 1000],
+        ['2014', 200],
+        ['2015', 170],
+        ['2016', 260],
+        ['2017', 1230],
+        ['2018', 1030]
       ],
-      chartData3: [
-        ['Year', 'Sales', 'Expenses', 'Profit'],
-        ['2014', 500, 430, 200],
-        ['2015', 170, 460, 250],
-        ['2016', 560, 1420, 300],
-        ['2017', 3030, 540, 350]
-      ],
-      chartOptions: {
+       chartData3: [
+        ['Year', 'Sales'],
+        ['2014', 400],
+        ['2015', 1470],
+        ['2016', 560],
+        ['2017', 30],
+        ['2018', 1030]
+      ]
+      
+    }
+  },
+  computed: {
+    chartOptions () {
+      if (!this.chartsLib) return null
+      return this.chartsLib.charts.Bar.convertOptions({
         chart: {
           title: 'Company Performance',
-          subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-        }
-      }
+        },
+        bars: 'vertical', // Required for Material Bar Charts.
+        hAxis: { format: 'decimal' },
+        height: 200,
+        colors: ['#e6ff00'],
+        backgroundColor: '#002140',
+        legend: {position: 'none'},
+        titleTextStyle: {
+            color: '#fff'
+        },
+        hAxis: {
+            textStyle: {
+                color: '#fff'
+            },
+            titleTextStyle: {
+                color: '#fff'
+            }
+        },
+        vAxis: {
+            textStyle: {
+                color: '#fff'
+            },
+            titleTextStyle: {
+                color: '#fff'
+            }
+        },
+
+
+      })
     }
+  },
+  methods: {
+    onChartReady (chart, google) {
+      this.chartsLib = google
+    }
+    
+    
   }
- 
 }
 </script>
 
@@ -96,4 +153,11 @@ export default {
     a {
         color: #42b983;
     }
+    
+    .card-body {
+      margin:0px;
+      padding:0px;
+    }
+    
+   
 </style>
