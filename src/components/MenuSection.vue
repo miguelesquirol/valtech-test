@@ -1,42 +1,61 @@
 <template>
   <div class="menu">
       
-    <nav class="navbar nav-secondary navbar-expand-lg navbar-dark bg-dark">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+       <nav class="navbar nav-secondary navbar-expand-lg navbar-dark bg-dark">
+            <div class="container justify-content-end">
+              <div class="collapse navbar-collapse ">
+                <ul class="navbar-nav">
+                  <li class="nav-item"><a href="#" target="_blank" rel="noopener" class="nav-link">Research</a></li>
+                  <li class="nav-item"><a href="#" target="_blank" rel="noopener" class="nav-link">Locations</a></li>
+                  <li class="nav-item"><a href="#" target="_blank" rel="noopener" class="nav-link">Contributions</a></li>
+                  <li class="nav-item"><a href="#" target="_blank" rel="noopener" class="nav-link">News hub</a></li>
+                </ul>
+                <ul class="navbar-nav lang">
+                  <li><a href="#" target="_blank" rel="noopener">FR</a></li>
+                </ul> 
+             </div>
+         </div>
+        </nav>
+      
+<b-navbar toggleable="md" type="dark" variant="info" class="navbar nav-secondary navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+      <b-navbar-brand href="#">NavBar</b-navbar-brand>
     
-      <div class="collapse navbar-collapse justify-content-end">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a href="#" target="_blank" rel="noopener" class="nav-link">Research</a></li>
-          <li class="nav-item"><a href="#" target="_blank" rel="noopener" class="nav-link">Locations</a></li>
-          <li class="nav-item"><a href="#" target="_blank" rel="noopener" class="nav-link">Contributions</a></li>
-          <li class="nav-item"><a href="#" target="_blank" rel="noopener" class="nav-link">News hub</a></li>
-        </ul>
-     
-         <ul class="navbar-nav lang">
-           <li><a href="#" target="_blank" rel="noopener">FR</a></li>
-         </ul> 
-     </div>
-     
-    </nav>
+      <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+    
+    
+      <b-collapse is-nav id="nav_collapse" class="justify-content-end">
+    
+        <b-navbar-nav >
+      
+           <b-nav-item href="#" class="nav-item active"><a href="#" target="_blank" rel="noopener" class="nav-link">We are ipsu <span class="sr-only">(current)</span>m</a></b-nav-item>
+           <b-nav-item href="#" target="_blank" rel="noopener" class="nav-link">We are dolr</a></b-nav-item>
+           <b-nav-item href="#" target="_blank" rel="noopener" class="nav-link">iopsum</a></b-nav-item>
+           <b-nav-item href="#" target="_blank" rel="noopener" class="nav-link">amet</a></b-nav-item>
+                      
+                      
+        </b-navbar-nav>
+    
+        <!-- Right aligned nav items -->
+        <b-navbar-nav class="ml-auto">
+    
+        
+    
+          
+    
+      
+        </b-navbar-nav>
+    
+      </b-collapse>
+  </div>
 
-    <nav class="navbar nav-main navbar-expand-md navbar-dark bg-dark"  id="navbarSupportedContent">
-        <a href="/" class="navbar-brand">Bootstrap 4</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar7">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse justify-content-stretch" id="navbar7">
-            <ul class="navbar-nav ml-auto">
-                 <li class="nav-item active"><a href="#" target="_blank" rel="noopener" class="nav-link">We are ipsu <span class="sr-only">(current)</span>m</a></li>
-              <li><a href="#" target="_blank" rel="noopener" class="nav-link">We are dolr</a></li>
-              <li><a href="#" target="_blank" rel="noopener" class="nav-link">iopsum</a></li>
-              <li><a href="#" target="_blank" rel="noopener" class="nav-link">amet</a></li>
-            </ul>
-        </div>
-    </nav>
+</b-navbar>    
 
-     
+
+       
+        
+    
   </div>
 </template>
 
@@ -74,6 +93,9 @@
     }
 }
 
+.navbar-collapse {
+    flex-grow:0;
+}
 .nav-main {
     
     li {
